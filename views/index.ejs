@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Users</title>
+    </head>
+    <h1>Validate a User!</h1>
+    <body>
+        <form class="" action="/users" method="post">
+            <input type="text" name="firstName" placeholder="First Name"><br>
+            <input type="text" name="lastName" placeholder="Last Name"><br>
+            <input type="text" name="age" placeholder="Age"><br>
+            <input type="text" name="email" placeholder="Email"><br>
+            <input type="submit" name="" value="Add user">
+        </form>
+
+    <% if( typeof(errors) != 'undefined' ) { %>
+        <% for (var x in errors) { %>
+             <h3><%= errors[x].message %></h3>
+        <% } %>
+    <% } %>
+
+    <% if( users.length > 0 ) { %>
+        <% users.forEach(function (user) { %>
+            <h3><%= user.firstName %> <%= user.lastName %></h3>
+            <h3><%= user.age %></h3>
+            <h3><%= user.email %></h3>
+            <hr>
+        <% }) %>
+    <% } %>
+    </body>
+</html>
